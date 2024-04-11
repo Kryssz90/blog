@@ -4,12 +4,23 @@ import { defineConfig } from "vite";
 import mdx from "@mdx-js/rollup"
 import tsconfigPaths from "vite-tsconfig-paths";
 import remarkGfm from 'remark-gfm'
+import Unfonts from 'unplugin-fonts/vite'
 
 installGlobals();
 
 export default defineConfig({
-  plugins: [mdx({
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
-  }), remix(), tsconfigPaths() ],
+  plugins: [
+    Unfonts({
+      google: {
+        families: ['Crimson Pro', 'Open Sans', 'Material+Icons', '"Chakra Petch"'],
+      },
+    }),
+    mdx({
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [],
+    }),
+
+    remix(),
+
+    tsconfigPaths()],
 });

@@ -34,6 +34,7 @@ export type BlogArticleFrontmatter = {
     categories: string[];
     imageUrl?: string;
     imageAltText?: string;
+    slug?: string;
   };
   
   export function validateFrontMatter(attributes: unknown): attributes is BlogArticleFrontmatter {
@@ -46,6 +47,34 @@ export type BlogArticleFrontmatter = {
       typeof (attributes as any)['date'] === 'object'
     );
   }
+
+export async function fetchBlogFilesFrontMatters<FrontMatter>(
+  path: string,
+): Promise<ActionResult<FetchMarkdownFileResState, FrontMatter[]>> {
+  
+  const files = await fs.readdir(path);
+  if (!files) {
+    return [500, FetchMarkdownFileResState.fileNotFound, undefined];
+  }
+  const frontMatters: FrontMatter[] = [];
+  for (const file of files) {
+    const fileContent = await fs.readFile(`${path}/${file}`, 'utf8');
+    const ast = Markdoc.parse(fileContent);
+    const frontmatter = ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {};
+    try {
+      if (!validateFrontMatter(frontmatter)) {
+          throw new Error(`File ${file} is missing frontmatter information`);
+      }
+    } catch (error: any) {
+      console.error(error);
+      return [500, FetchMarkdownFileResState.internalError, undefined];
+    }
+    frontmatter.slug = file.replace('.md', '');
+    frontMatters.push(frontmatter as FrontMatter);
+  }
+  return [200, FetchMarkdownFileResState.success, frontMatters];
+
+}
   
 export async function fetchMarkdownFileFs<FrontMatter>(
   path: string,
@@ -67,17 +96,7 @@ export async function fetchMarkdownFileFs<FrontMatter>(
     return [500, FetchMarkdownFileResState.internalError, undefined];
   }
 
-  const content = Markdoc.transform(ast, {
-    nodes: {
-        heading: {
-            render: "Heading",
-            attributes: {
-                level: {type: "Number", required: true, default: 1},
-            }
-        }
-    }
-    
-  });
+  const content = Markdoc.transform(ast, config);
   return [
     200,
     FetchMarkdownFileResState.success,
@@ -89,3 +108,27 @@ export async function fetchMarkdownFileFs<FrontMatter>(
     },
   ];
 }
+
+const config = {
+  nodes: {
+      heading: {
+          render: "Heading",
+          attributes: {
+              level: {type: "Number", required: true, default: 1},
+          }
+      },
+      list: {
+          render: "List",
+          attributes: {
+              ordered: {type: "Boolean", required: false, default: false},
+          }
+      },
+      item: {
+          render: "ListItem",
+      },
+      paragraph: {
+          render: "Paragraph",
+      }
+  }
+  
+};

@@ -1,36 +1,40 @@
-# Welcome to Remix + Vite!
+# Material UI - Remix example in TypeScript
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+## How to use
 
-## Development
+Download the example [or clone the repo](https://github.com/mui/material-ui):
 
-Run the Vite dev server:
+<!-- #default-branch-switch -->
 
-```shellscript
+```bash
+curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-remix-ts
+cd material-ui-remix-ts
+```
+
+Install it and run:
+
+```bash
+npm install
 npm run dev
 ```
 
-## Deployment
+or:
 
-First, build your app for production:
+<!-- #default-branch-switch -->
 
-```sh
-npm run build
-```
+[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-remix-ts)
 
-Then run the app in production mode:
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-remix-ts)
 
-```sh
-npm start
-```
+## The idea behind the example
 
-Now you'll need to pick a host to deploy it to.
+The project uses [Remix](https://remix.run/), which is a full stack web framework.
+It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
+If you prefer, you can [use styled-components instead](https://mui.com/material-ui/integrations/interoperability/#styled-components).
 
-### DIY
+## What's next?
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+<!-- #default-branch-switch -->
 
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+You now have a working example project.
+You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.

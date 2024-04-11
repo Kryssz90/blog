@@ -32,22 +32,32 @@ I have experience with the following technologies:
 - Kubernetes
 - Azure
 - CI/CD
-- GitHub Actions
+    - GitHub Actions
+    - Azure DevOps
 - Bicep
 - Splunk
 
 ## Experience
 
-### 2017 - 2019: Software Developer at [Endo-Kapszula Kft.](https://endo-kapszula.com)
+### [Vipps MobilePay AS](https://www.vipps.no)
 
-I worked on a medical image processing software, which is used in the
-gastroenterology field.
-
-### 2019 - 2024: Full Stack Developer at [Vipps MobilePay AS](https://www.vipps.no)
+2019 - 2023: Full Stack Developer
+2023 - 2024: Senior Full Stack Developer
 
 I worked on the vipps.no website, then I joined the Merchant Portal team.
 My main focus was the Merchant Portal, where I worked on the frontend and
 backend as well.
+
+### [Endo-Kapszula Kft.](https://endo-kapszula.com)
+
+2017 - 2019: Software Developer
+
+I worked on a medical image processing software, which is used in the
+gastroenterology field.
+
+1. Value
+2. Value
+3. Test
 
 
 ## Table

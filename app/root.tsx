@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -23,7 +22,7 @@ interface DocumentProps {
   title?: string;
 }
 
-const Document = withEmotionCache(({ children, title }: DocumentProps, emotionCache) => {
+const Document = withEmotionCache(({ title }: DocumentProps, emotionCache) => {
   const clientStyleData = React.useContext(ClientStyleContext);
 
   // Only executed on client
@@ -64,10 +63,9 @@ const Document = withEmotionCache(({ children, title }: DocumentProps, emotionCa
       </head>
       <body>
         <Menu />
-        {children}
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

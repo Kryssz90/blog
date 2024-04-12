@@ -1,0 +1,16 @@
+.paragraph {
+    margin: 0.8rem 0;
+    line-height: 1.3;
+}
+
+.li {
+    padding-left: 0;
+    margin-left: 1rem;
+}
+
+.li::marker {
+    color: #454545;
+    font-family: "Courier New", Courier, monospace;
+    content: "⎯ ";
+    line-height: 1.3;
+}

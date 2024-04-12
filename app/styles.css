@@ -1,7 +1,31 @@
-h1 {
-    font-family: "Chakra Petch";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
-a, a:link, a:visited, a:hover, a:active{
-    color: #007bff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Fira Code", monospace;
+}
+
+a,
+a:visited,
+a:active {
+    color: #ccccfc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+body {
+    background-color: #121212;
+    color: #cccccc;
 }

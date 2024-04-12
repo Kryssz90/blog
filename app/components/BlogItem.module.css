@@ -1,0 +1,20 @@
+.blogItem {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #454545;
+    border-radius: 0.5rem;
+    list-style-type: none;
+    cursor: pointer;
+
+    &:hover {
+        border-color: #ffffff;
+    }
+}
+
+.blogItemTitle {
+    margin: 0.5rem 0 0.2rem 0;
+}
+
+.blogItemDate {
+    font-size: 0.8rem;
+}

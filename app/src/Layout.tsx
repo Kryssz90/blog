@@ -1,16 +1,13 @@
 import React from 'react';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
 import Copyright from './Copyright';
 import { Outlet } from '@remix-run/react';
+import classes from './Layout.module.css';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children}: { children: React.ReactNode }) {
   return (
-    <Container maxWidth="md">
-      <Box sx={{ my: 4 }}>
-        <Outlet />
+    <main className={classes.main}>
+        {children}
         <Copyright />
-      </Box>
-    </Container>
+    </main>
   );
 }

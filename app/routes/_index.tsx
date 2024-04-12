@@ -1,8 +1,7 @@
 import * as React from 'react';
 import type { MetaFunction } from '@remix-run/node';
-import { Link as RemixLink } from '@remix-run/react';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import { Link } from '@remix-run/react';
+
 
 // https://remix.run/docs/en/main/route/meta
 export const meta: MetaFunction = () => [
@@ -14,11 +13,11 @@ export const meta: MetaFunction = () => [
 export default function Index() {
   return (
     <React.Fragment>
-      <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
+      <h1>
         Krisztián Zsobrák
-      </Typography>
+      </h1>
         Check out my{" "}
-      <Link to="/blog" color="secondary" component={RemixLink}>
+      <Link to="/blog">
         Blog
       </Link>.
     </React.Fragment>

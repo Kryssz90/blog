@@ -1,6 +1,6 @@
-import { Link } from "@mui/material";
+
 import { json, type LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { Markdown } from "~/components/Markdown";
 import { fetchMarkdownFileFs } from "~/services/markdown.server";
 
@@ -21,7 +21,11 @@ export default function Index() {
   const { article } = useLoaderData<typeof loader>();
 
   return <>
-  <Link href="/blog">Back to all</Link>
+  <Link to="/blog">&lt; Back</Link>
+    <div style={{
+      marginTop: '1rem'
+    }}>
     <Markdown content={article.content} />
+    </div>
   </>
 }

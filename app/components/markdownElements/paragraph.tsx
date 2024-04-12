@@ -1,7 +1,9 @@
-import Typography from '@mui/material/Typography';
 import { PropsWithChildren } from 'react';
+
+import classes from './elements.module.css';
+
 export const Paragraph = ({ children }: PropsWithChildren<{}>) => {
-    return <Typography variant="body1" component="p">
+    return <p className={classes.paragraph}>
         {children}
-    </Typography>
+    </p>
 }

@@ -5,7 +5,7 @@
     "sideEffects": false,
     "scripts": {
         "dev": "remix vite:dev",
-        "build": "remix-ssg public",
+        "build": "remix vite:build",
         "start": "serve -l 3000 public"
     },
     "dependencies": {
@@ -26,7 +26,6 @@
         "@remix-run/dev": "latest",
         "@types/react": "latest",
         "@types/react-dom": "latest",
-        "remix-ssg": "^0.0.8",
         "serve": "^14.2.1",
         "typescript": "latest",
         "unplugin-fonts": "^1.1.1",

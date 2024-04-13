@@ -1,36 +1,38 @@
 {
-  "name": "blog",
-  "version": "5.0.0",
-  "private": true,
-  "sideEffects": false,
-  "scripts": {
-    "dev": "remix vite:dev",
-    "build": "remix vite:build",
-    "start": "netlify serve"
-  },
-  "dependencies": {
-    "@markdoc/markdoc": "^0.4.0",
-    "@mdx-js/rollup": "^3.0.1",
-    "@netlify/remix-adapter": "^2.3.1",
-    "@remix-run/css-bundle": "latest",
-    "@remix-run/node": "latest",
-    "@remix-run/react": "latest",
-    "@remix-run/serve": "latest",
-    "@remix-run/server-runtime": "latest",
-    "isbot": "^4",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite-tsconfig-paths": "^4.3.2"
-  },
-  "devDependencies": {
-    "@remix-run/dev": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "typescript": "latest",
-    "unplugin-fonts": "^1.1.1",
-    "vite": "^5.2.8"
-  },
-  "engines": {
-    "node": ">=14"
-  }
+    "name": "blog",
+    "version": "5.0.0",
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+        "dev": "remix vite:dev",
+        "build": "remix-ssg public",
+        "start": "serve -l 3000 public"
+    },
+    "dependencies": {
+        "@markdoc/markdoc": "^0.4.0",
+        "@mdx-js/rollup": "^3.0.1",
+        "@netlify/remix-adapter": "^2.3.1",
+        "@remix-run/css-bundle": "latest",
+        "@remix-run/node": "latest",
+        "@remix-run/react": "latest",
+        "@remix-run/serve": "latest",
+        "@remix-run/server-runtime": "latest",
+        "isbot": "^4",
+        "react": "latest",
+        "react-dom": "latest",
+        "vite-tsconfig-paths": "^4.3.2"
+    },
+    "devDependencies": {
+        "@remix-run/dev": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "latest",
+        "remix-ssg": "^0.0.8",
+        "serve": "^14.2.1",
+        "typescript": "latest",
+        "unplugin-fonts": "^1.1.1",
+        "vite": "^5.2.8"
+    },
+    "engines": {
+        "node": ">=14"
+    }
 }

@@ -7,4 +7,4 @@ command = "npm run dev"
 framework = "vite"
 
 [functions]
-  included_files = ["md/*"]
+  included_files = ["md/**/*"]

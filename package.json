@@ -18,6 +18,8 @@
         "@remix-run/serve": "latest",
         "@remix-run/server-runtime": "latest",
         "isbot": "^4",
+        "prism-react-renderer": "^2.3.1",
+        "prismjs": "^1.29.0",
         "react": "latest",
         "react-dom": "latest",
         "vite-tsconfig-paths": "^4.3.2"
@@ -25,6 +27,7 @@
     "devDependencies": {
         "@remix-run/dev": "latest",
         "@types/js-yaml": "^4.0.9",
+        "@types/prismjs": "^1.26.3",
         "@types/react": "latest",
         "@types/react-dom": "latest",
         "serve": "^14.2.1",

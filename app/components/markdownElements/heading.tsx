@@ -41,26 +41,26 @@ const getHeadingStyle = (level: number) => {
             marginBottom: "1rem",
         };
         case 2: return {
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             fontWeight: 700,
-            marginTop: "1rem",
+            marginTop: "2rem",
             marginBottom: "0.8rem",
         };
         case 3: return {
-            fontSize: "1.5rem",
+            fontSize: "1.25rem",
             fontWeight: 700,
             marginTop: "0.8rem",
             marginBottom: "0.6rem",
         };
         case 4: return {
-            fontSize: "1.25rem",
+            fontSize: "1rem",
             fontWeight: 700,
             marginTop: "0.6rem",
             marginBottom: "0.4rem",
            
         };
         case 5: return {
-            fontSize: "1.25rem",
+            fontSize: "1rem",
             fontWeight: 700,
             marginTop: "0.6rem",
             marginBottom: "0.4rem",

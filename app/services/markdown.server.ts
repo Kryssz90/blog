@@ -139,6 +139,25 @@ const config = {
     },
     paragraph: {
       render: "Paragraph",
+    },
+    fence: {
+      render: "Fence",
+      attributes: {
+        language: {
+          type: "String", required: false, default: ""
+        },
+        content: {
+          type: "String", required: false, default: ""
+        }
+      }
+    },
+    code: {
+      render: "Code",
+      attributes: {
+        content: {
+          type: "String", required: false, default: ""
+        }
+      }
     }
   }
 

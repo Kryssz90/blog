@@ -10,11 +10,8 @@ export const List = ({ children, ordered }: PropsWithChildren<Props>) => {
     return <ListComponent
         style={{
             listStyleType: ordered ? 'decimal' : 'disc',
-            listStylePosition: 'inside',
-            
-            padding: 0,
-            margin: 0,
         }}
+        className={classes.list}
     >{children}</ListComponent>
 }
 

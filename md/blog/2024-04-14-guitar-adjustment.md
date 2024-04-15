@@ -10,10 +10,10 @@ Disclaimer: I am not a professional guitar technician. This is just a summary of
 ## Step 1: Truss Rod Adjustment
 
 1. Tune the guitar to pitch.
-2. Put a capo on the 1th fret
+2. Put a capo on the **1th fret**
 3. Put the guitar in playing position
-4. Put a finger on the 17th fret
-5. The distance between the string and the 7th fret should be 0.254mm (0.01 inch)
+4. Put a finger on the **17th fret**
+5. The distance between the string and the **7th fret** should be `0.254mm` (`0.01 inch`)
 6. If the distance is too big, you need to tighten the truss rod, if it's too small, you need to loosen it.
 
 ### Adjusting the truss rod
@@ -21,7 +21,7 @@ Disclaimer: I am not a professional guitar technician. This is just a summary of
 1. Insert the truss rod wrench in the hole at headstock
 2. Turn the wrench clockwise (look from the direction from the headstock to the body) to tighten the truss rod
 3. Turn the wrench counter-clockwise to loosen the truss rod
-4. Make small adjustments, 1/8 of a turn at a time
+4. Make small adjustments, ⅛ of a turn at a time.
 
 **Important**: Don't force the truss rod, if it's too hard to turn, you might break it.
 
@@ -29,7 +29,7 @@ Disclaimer: I am not a professional guitar technician. This is just a summary of
 
 1. Tune the guitar to pitch
 2. Put the guitar in playing position
-3. The distance between the bottom of the string, and the top of the 17th fret should be 2mm (5/64 inch)
+3. The distance between the bottom of the string, and the top of the **17th fret** should be `2mm` (`5/64 inch`)
 4. If the distance is too big, you need to lower the bridge, if it's too small, you need to raise it.
 5. Use an allen wrench to adjust the height of the bridge screws
 6. Tune the string again to pitch and check again
@@ -39,7 +39,7 @@ Disclaimer: I am not a professional guitar technician. This is just a summary of
 
 1. Tune the guitar to pitch
 2. Put the guitar in playing position
-3. The distance between the bottom of the string, and the top of the 1th fret should be 0.45mm (0.018inch)
+3. The distance between the bottom of the string, and the top of the **1th fret** should be `0.45mm` (`0.018inch`)
 4. If the distance is too big, you need to file the nut. It is very difficult to raise the nut.
 
 ### Filing the nut
@@ -55,9 +55,9 @@ Disclaimer: I am not a professional guitar technician. This is just a summary of
 ## Step 4: Intonation Adjustment
 
 1. Tune the guitar to pitch
-2. Compare the 12th fret harmonic with the open string note
-3. If the 12th fret harmonic is flat, the string is too long, move the saddle towards the neck
-4. If the 12th fret harmonic is sharp, the string is too short, move the saddle towards the bridge
+2. Compare the **12th fret** harmonic with the open string note
+3. If the **12th fret** harmonic is flat, the string is too long, move the saddle towards the neck
+4. If the **12th fret** harmonic is sharp, the string is too short, move the saddle towards the bridge
 5. Tune the string again to pitch and check again
 6. Do this for all strings
 

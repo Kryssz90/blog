@@ -19,7 +19,6 @@ export const List = ({ children, ordered }: PropsWithChildren<Props>) => {
 }
 
 export const ListItem = ({ children }: PropsWithChildren<{}>) => {
-    
     return <li className={classes.li}> {children}</li>
     
 }

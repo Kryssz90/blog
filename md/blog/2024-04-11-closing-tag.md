@@ -5,6 +5,8 @@ date: 2024-04-11
 ---
 # Selfclosing tags
 
+**Important**: This post is Work In Progress.
+
 When writing HTML, there are generally two king of tags:
 - One that needs opening and closing tags, like `<div></div>`
 - One that is selfclosing, like `<img />`

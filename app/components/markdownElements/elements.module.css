@@ -11,6 +11,6 @@
 .li::marker {
     color: #454545;
     font-family: "Courier New", Courier, monospace;
-    content: "⎯ ";
+
     line-height: 1.3;
 }

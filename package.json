@@ -24,6 +24,7 @@
     },
     "devDependencies": {
         "@remix-run/dev": "latest",
+        "@types/js-yaml": "^4.0.9",
         "@types/react": "latest",
         "@types/react-dom": "latest",
         "serve": "^14.2.1",

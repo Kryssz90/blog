@@ -1,4 +1,4 @@
-import Markdoc from '@markdoc/markdoc';
+import Markdoc, { Config, RenderableTreeNode } from '@markdoc/markdoc';
 import fs from 'fs/promises';
 import yaml from 'js-yaml';
 
@@ -28,34 +28,40 @@ const getContentPath = (url: string, slug: string): string => {
 };
 
 export type BlogArticleFrontmatter = {
-    date: string;
-    title: string;
-    description: string;
-    categories: string[];
-    imageUrl?: string;
-    imageAltText?: string;
-    slug?: string;
-  };
-  
-  export function validateFrontMatter(attributes: unknown): attributes is BlogArticleFrontmatter {
-    return (
-      !!attributes &&
-      typeof attributes !== 'function' &&
-      typeof attributes === 'object' &&
-      typeof (attributes as any)['title'] === 'string' &&
-      typeof (attributes as any)['description'] === 'string' &&
-      typeof (attributes as any)['date'] === 'object'
-    );
-  }
+  date: string;
+  title: string;
+  description: string;
+  categories?: string[];
+  imageUrl?: string;
+  imageAltText?: string;
+  slug?: string;
+};
 
-export async function fetchBlogFilesFrontMatters<FrontMatter>(
+export function validateFrontMatter(attributes: unknown): attributes is BlogArticleFrontmatter {
+  return (
+    !!attributes &&
+    typeof attributes !== 'function' &&
+    typeof attributes === 'object' &&
+    typeof (attributes as any)['title'] === 'string' &&
+    typeof (attributes as any)['description'] === 'string' &&
+    typeof (attributes as any)['date'] === 'object'
+  );
+}
+
+export async function fetchBlogFilesFrontMatters<FrontMatter extends {
+  title: string;
+  date: string;
+  description: string;
+  slug: string;
+}>(
   path: string,
 ): Promise<ActionResult<FetchMarkdownFileResState, FrontMatter[]>> {
-  
+
   const files = await fs.readdir(path);
   if (!files) {
     return [500, FetchMarkdownFileResState.fileNotFound, undefined];
   }
+
   const frontMatters: FrontMatter[] = [];
   for (const file of files) {
     const fileContent = await fs.readFile(`${path}/${file}`, 'utf8');
@@ -63,7 +69,7 @@ export async function fetchBlogFilesFrontMatters<FrontMatter>(
     const frontmatter = ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {};
     try {
       if (!validateFrontMatter(frontmatter)) {
-          throw new Error(`File ${file} is missing frontmatter information`);
+        throw new Error(`File ${file} is missing frontmatter information`);
       }
     } catch (error: any) {
       console.error(error);
@@ -72,10 +78,15 @@ export async function fetchBlogFilesFrontMatters<FrontMatter>(
     frontmatter.slug = file.replace('.md', '');
     frontMatters.push(frontmatter as FrontMatter);
   }
+
+  frontMatters.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
   return [200, FetchMarkdownFileResState.success, frontMatters];
 
 }
-  
+
 export async function fetchMarkdownFileFs<FrontMatter>(
   path: string,
   slug: string,
@@ -89,7 +100,7 @@ export async function fetchMarkdownFileFs<FrontMatter>(
   const frontmatter = ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {};
   try {
     if (!validateFrontMatter(frontmatter)) {
-        throw new Error(`File ${slug} is missing frontmatter information`);
+      throw new Error(`File ${slug} is missing frontmatter information`);
     }
   } catch (error: any) {
     console.error(error);
@@ -111,24 +122,24 @@ export async function fetchMarkdownFileFs<FrontMatter>(
 
 const config = {
   nodes: {
-      heading: {
-          render: "Heading",
-          attributes: {
-              level: {type: "Number", required: true, default: 1},
-          }
-      },
-      list: {
-          render: "List",
-          attributes: {
-              ordered: {type: "Boolean", required: false, default: false},
-          }
-      },
-      item: {
-          render: "ListItem",
-      },
-      paragraph: {
-          render: "Paragraph",
+    heading: {
+      render: "Heading",
+      attributes: {
+        level: { type: "Number", required: true, default: 1 },
       }
+    },
+    list: {
+      render: "List",
+      attributes: {
+        ordered: { type: "Boolean", required: false, default: false },
+      }
+    },
+    item: {
+      render: "ListItem",
+    },
+    paragraph: {
+      render: "Paragraph",
+    }
   }
-  
-};
+
+} as Config;

@@ -1,4 +1,3 @@
-
 import { json, type LoaderFunctionArgs } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { Markdown } from "~/components/Markdown";
@@ -22,6 +21,11 @@ export default function Index() {
 
   return <>
   <Link to="/blog">&lt; Back</Link>
+    <div
+      style={{
+        float: "right"
+      }}
+    >View on <a href={`https://github.com/Kryssz90/blog/blob/main/md/blog/${article.slug}.md`}>GitHub</a></div>
     <div style={{
       marginTop: '1rem'
     }}>
